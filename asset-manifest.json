@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/chess-team-buider/static/css/main.fc60fc87.css",
-    "main.js": "/chess-team-buider/static/js/main.042ba0b7.js",
-    "static/js/453.825386d9.chunk.js": "/chess-team-buider/static/js/453.825386d9.chunk.js",
-    "index.html": "/chess-team-buider/index.html",
-    "main.fc60fc87.css.map": "/chess-team-buider/static/css/main.fc60fc87.css.map",
-    "main.042ba0b7.js.map": "/chess-team-buider/static/js/main.042ba0b7.js.map",
-    "453.825386d9.chunk.js.map": "/chess-team-buider/static/js/453.825386d9.chunk.js.map"
+    "main.css": "/chess-team-builder/static/css/main.fc60fc87.css",
+    "main.js": "/chess-team-builder/static/js/main.8508e56c.js",
+    "static/js/453.825386d9.chunk.js": "/chess-team-builder/static/js/453.825386d9.chunk.js",
+    "index.html": "/chess-team-builder/index.html",
+    "main.fc60fc87.css.map": "/chess-team-builder/static/css/main.fc60fc87.css.map",
+    "main.8508e56c.js.map": "/chess-team-builder/static/js/main.8508e56c.js.map",
+    "453.825386d9.chunk.js.map": "/chess-team-builder/static/js/453.825386d9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc60fc87.css",
-    "static/js/main.042ba0b7.js"
+    "static/js/main.8508e56c.js"
   ]
 }
