@@ -202,6 +202,10 @@ app.get("/api/export-pdf", requireAuth, async (req, res) => {
   doc.end();
 });
 
+app.get("/", (req, res) => {
+  res.send("Chess Team Builder API is running");
+});
+
 // =====================
 // START SERVER
 // =====================
