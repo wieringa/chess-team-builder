@@ -1,5 +1,6 @@
 ## Chess Team Builder
 [![Live Demo](https://img.shields.io/badge/demo-online-green)](https://wieringa.github.io/chess-team-builder/)
+
 The Chess Team Builder distributes tournament participants into balanced teams by taking into account:
 
 - **FIDE rating** (to ensure equal playing strength)  
