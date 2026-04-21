@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chess Team Builder</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 40px;
+    background: #f5f7fa;
+}
+
+.team {
+    background: white;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.player {
+    padding: 6px;
+    margin: 4px 0;
+    background: #eee;
+    border-radius: 5px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>♟️ Chess Team Builder</h1>
+
+<input type="file" id="fileInput" accept=".csv">
+<br><br>
+
+<button onclick="generate()">Generate Teams</button>
+
+<div id="output"></div>
+
+<script>
+let players = [];
+
+function parseCSV(text) {
+    const lines = text.trim().split("\n");
+    return lines.slice(1).map(line => {
+        const [name, rating, nationality] = line.split(",");
+        return {
+            name: name.trim(),
+            rating: Number(rating),
+            nationality: nationality.trim()
+        };
+    });
+}
+
+document.getElementById("fileInput").addEventListener("change", e => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        players = parseCSV(e.target.result);
+        alert("File loaded: " + players.length + " players");
+    };
+
+    reader.readAsText(file);
+});
+
+function generate() {
+    if (players.length === 0) {
+        alert("Upload CSV first");
+        return;
+    }
+
+    let teams = [];
+
+    for (let i = 0; i < players.length; i += 3) {
+        let team = players.slice(i, i + 3);
+        if (team.length === 3) teams.push(team);
+    }
+
+    render(teams);
+}
+
+function render(teams) {
+    const output = document.getElementById("output");
+    output.innerHTML = "";
+
+    teams.forEach((team, i) => {
+        let div = document.createElement("div");
+        div.className = "team";
+
+        div.innerHTML = `<h3>Team ${i + 1}</h3>`;
+
+        team.forEach(p => {
+            let d = document.createElement("div");
+            d.className = "player";
+            d.textContent = `${p.name} (${p.rating}, ${p.nationality})`;
+            div.appendChild(d);
+        });
+
+        output.appendChild(div);
+    });
+}
+</script>
+
+</body>
+</html>
